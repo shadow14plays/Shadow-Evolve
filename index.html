@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Shadow-Evolve · Treino em casa</title>
+  <meta name="description" content="Seu app de treino em casa: treinos guiados, timer HIIT e acompanhamento de progresso.">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌑</text></svg>">
+
+  <!-- PWA -->
+  <link rel="manifest" href="manifest.webmanifest">
+  <meta name="theme-color" content="#0a0a13">
+  <link rel="apple-touch-icon" href="icons/icon-192.png">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="Shadow-Evolve">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="topbar">
+    <div class="logo">🌑 Shadow<span>Evolve</span></div>
+    <div class="data-hoje" id="data-hoje"></div>
+  </header>
+
+  <main id="app">
+    <!-- INÍCIO -->
+    <section id="view-home" class="view active">
+      <div id="home-saudacao"></div>
+      <div class="stats-row" id="home-stats"></div>
+
+      <h2 class="section-title">Treino de hoje</h2>
+      <div id="home-hoje"></div>
+
+      <h2 class="section-title">Plano da semana</h2>
+      <div id="home-plano" class="plano"></div>
+    </section>
+
+    <!-- TREINOS -->
+    <section id="view-treinos" class="view">
+      <h2 class="view-title">Treinos</h2>
+      <p class="subtitle">Escolha um treino e evolua no seu ritmo. Sem equipamento, só você.</p>
+      <div id="lista-treinos" class="treinos-grid"></div>
+
+      <h2 class="section-title">Exercícios</h2>
+      <div id="lista-exercicios" class="exercicios-grid"></div>
+    </section>
+
+    <!-- TIMER -->
+    <section id="view-timer" class="view">
+      <h2 class="view-title">Timer</h2>
+      <p class="subtitle">Siga um treino guiado ou monte seu próprio HIIT.</p>
+      <div id="timer-ui"></div>
+    </section>
+
+    <!-- PROGRESSO -->
+    <section id="view-progresso" class="view">
+      <h2 class="view-title">Progresso</h2>
+      <p class="subtitle">Evolução se constrói um treino de cada vez.</p>
+      <div id="progresso-ui"></div>
+    </section>
+  </main>
+
+  <nav id="nav">
+    <button class="nav-btn active" data-view="home">🏠<span>Início</span></button>
+    <button class="nav-btn" data-view="treinos">🏋️<span>Treinos</span></button>
+    <button class="nav-btn" data-view="timer">⏱️<span>Timer</span></button>
+    <button class="nav-btn" data-view="progresso">📈<span>Progresso</span></button>
+  </nav>
+
+  <div id="modal-overlay" hidden>
+    <div id="modal"></div>
+  </div>
+  <div id="toast"></div>
+
+  <script src="data.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
